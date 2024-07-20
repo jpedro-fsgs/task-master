@@ -1,0 +1,65 @@
+@import "../App.scss";
+
+.container{
+    background-color: $backgroundcolorlighter;
+    text-align: center;
+    padding: 1px 25px;
+    max-width: 50vw;
+    margin: 50px auto;
+    border-radius: 5px;
+    >h1{
+        color: $textcolor;
+        font-size: 4rem;
+    }
+    .tasks-div{
+        height: 40vh;
+        overflow-y: auto;
+    }
+    
+}
+.taskCard{
+    display: flex;
+    background-color: $textcolor;
+    border-radius: 5px;
+    min-height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    padding: 15px;
+    font-size: 1.4rem;
+    >span{
+        display: flex;
+    }
+}
+
+.todo-btn{
+    width: 40px;
+    height: 40px;
+    border: none;
+    padding: 0;
+    background-color: $buttoncolor;
+    margin: 3px;
+    color: $textcolor;
+    border-radius: 3px;
+    &:active{
+        transform: scale(0.98);
+    }
+}
+.icon{
+    size: 2rem;
+}
+.todo-input{
+    background-color: $textcolor;
+    border: none;
+    font: inherit;
+    width: 90%;
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        min-width: 80vw;
+    }
+    input{
+        min-width: 60vw;
+    }
+  }

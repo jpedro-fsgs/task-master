@@ -1,0 +1,41 @@
+
+$backgroundcolordarker: #161853;
+$backgroundcolorlighter: #292C6D;
+$textcolor: #FAEDF0;
+$buttoncolor: #EC255A;
+$main-font: "Noto Sans", sans-serif;
+
+body{
+    background-color: $backgroundcolordarker;
+    font-family: $main-font;
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    background-color: $buttoncolor;
+    margin: 0;
+    height: 7vh;
+
+    >ul{
+        display: flex;
+        gap: 30px;
+        font-size: 2rem;
+        text-decoration: none;
+        list-style-type: none;
+        color: $backgroundcolorlighter;
+    }
+}
+.link-style{
+    text-decoration: none;
+    color: $textcolor;
+    font-weight: bold;
+    &:hover{
+        opacity: 0.85;
+    }
+
+}
+.navlink-active{
+    background-color: black;
+}

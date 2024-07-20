@@ -1,0 +1,30 @@
+@import "../App.scss";
+
+.container-horas{
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    max-width: 50vw;
+    height: auto;
+    color: $textcolor;
+    background-color: $backgroundcolorlighter;
+    margin: 20vh auto;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.horario{
+    font-size: 8rem;
+    margin: 0;
+}
+
+.data{
+    font-size: 2rem;
+    margin: 0;
+    align-self: right !important;
+}
+.dados{
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
