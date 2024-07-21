@@ -27,6 +27,10 @@
     margin: 15px;
     padding: 15px;
     font-size: 1.4rem;
+    font-weight: bold;
+    >p{
+        margin: 0;
+    }
     >span{
         display: flex;
     }
@@ -52,7 +56,10 @@
     background-color: $textcolor;
     border: none;
     font: inherit;
-    width: 90%;
+    width: 100%;
+    &:focus{
+        outline: none;
+    }
 }
 
 @media only screen and (max-width: 600px) {

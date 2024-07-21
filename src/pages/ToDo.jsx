@@ -59,7 +59,6 @@ function ToDo() {
       <div className="container">
         <h1>Lista de Tarefas</h1>
         <div className="taskCard">
-          {/* <strong contentEditable="true">{newTask}</strong> */}
           <input
           className="todo-input"
           id="task-input"
@@ -74,7 +73,7 @@ function ToDo() {
         <div className="tasks-div">
         {taskList.map((task, index) => (
           <div className="taskCard" key={index}>
-            <strong>{task}</strong>
+            <p>{task}</p>
             <span>
               <button className="todo-btn" onClick={() => upTask(index)}>{<BsChevronUp size={30} />}</button>
               <button className="todo-btn" onClick={() => downTask(index)}>{<BsChevronDown size={30} />}</button>
