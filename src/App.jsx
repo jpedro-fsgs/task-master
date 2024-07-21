@@ -4,6 +4,7 @@ import Cronometro from "./pages/Cronometro";
 import "./App.scss";
 import { NavLink, Route, Routes } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
+import Timer from "./pages/Timer";
 
 function App() {
   const activeStyle = {
@@ -56,6 +57,15 @@ function App() {
               Cronômetro
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/timer"
+              className="link-style"
+              style={({ isActive }) => (isActive ? activeStyle : {})}
+            >
+              Timer
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <Routes>
@@ -76,6 +86,7 @@ function App() {
             />
           }
         />
+        <Route path="/timer" element={<Timer/>}/>
       </Routes>
     </>
   );

@@ -8,21 +8,30 @@ import {
 } from "react-icons/bs";
 import "./Cronometro.scss";
 
-function Cronometro(props) {
+function Cronometro({
+  cronometro,
+  setCronometro,
+  isRunning,
+  setIsRunning,
+  intervalIdRef,
+  startTimeRef,
+  lapsList,
+  setLapsList,
+}) {
   // const [cronometro, setCronometro] = useState(0);
   // const [isRunning, setIsRunning] = useState(false);
   // const intervalIdRef = useRef(null)
   // const startTimeRef = useRef(0);
-  const {
-    cronometro,
-    setCronometro,
-    isRunning,
-    setIsRunning,
-    intervalIdRef,
-    startTimeRef,
-    lapsList,
-    setLapsList
-  } = props;
+  // const {
+  //   cronometro,
+  //   setCronometro,
+  //   isRunning,
+  //   setIsRunning,
+  //   intervalIdRef,
+  //   startTimeRef,
+  //   lapsList,
+  //   setLapsList
+  // } = props;
 
   // useEffect(() => {
   //   if(isRunning){
@@ -31,7 +40,6 @@ function Cronometro(props) {
   //       },10)
   //   }
   // }, [isRunning]);
-
 
   // const [lapsList, setLapsList] = useState(
   //   JSON.parse(localStorage.getItem("lapsList")) || []
@@ -73,9 +81,12 @@ function Cronometro(props) {
   }
 
   const scrollRef = useRef(null);
-  
+
   useEffect(() => {
-    scrollRef.current.scrollTo({top: scrollRef.current.scrollHeight, behavior: "smooth"});
+    scrollRef.current.scrollTo({
+      top: scrollRef.current.scrollHeight,
+      behavior: "smooth",
+    });
   }, [lapsList]);
 
   return (
@@ -98,7 +109,9 @@ function Cronometro(props) {
         </span>
         <div className="laps-list" ref={scrollRef}>
           {lapsList.map((lap, index) => (
-            <div className="lap-card" key={index}><p>{formatMilliseconds(lap)}</p></div>
+            <div className="lap-card" key={index}>
+              <p>{formatMilliseconds(lap)}</p>
+            </div>
           ))}
         </div>
       </div>

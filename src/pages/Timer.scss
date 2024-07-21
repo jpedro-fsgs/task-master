@@ -1,0 +1,64 @@
+@import "../App.scss";
+
+.timer{
+    display: block;
+    background-color: $backgroundcolorlighter;
+    margin: 50px auto;
+    max-width: 50vw;
+    text-align: center;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.time-timer{
+    color: $textcolor;
+    font-size: 5rem;
+    margin: 1rem;
+
+}
+
+.time-input{
+    display: block;
+    font-family: $main-font;
+    color: $textcolor;
+    background-color: $backgroundcolorlighter;
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bolder;
+    margin: 1rem auto;
+    >input{
+        background-color: $backgroundcolorlighter;
+        color: inherit;
+        font: inherit;
+        width: 7.3rem;
+        border: 3px solid $backgroundcolordarker;
+        border-radius: 5px;
+        &.minutes{
+            text-align: right;
+        }
+        &.seconds{
+            text-align: left;
+        }
+    }
+}
+
+.timer-btn{
+    background-color: $buttoncolor;
+    padding: auto;
+    color: $textcolor;
+    font-family: $main-font;
+    font-size: 2rem;
+    border: none;
+    border-radius: 3px;
+    margin: 15px;
+    width: 70px;
+    height: 60px;
+    >svg{
+        margin: 12px auto;
+   
+    }
+    &:active{
+        transform: scale(0.98);
+    }
+}
