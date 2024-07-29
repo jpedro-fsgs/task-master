@@ -1,6 +1,6 @@
-import { BsPause, BsPlay, BsStop, BsStopwatch } from "react-icons/bs";
+import { BsPause, BsPlay, BsStop } from "react-icons/bs";
 import "./Timer.scss";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function formatMinutes(time) {
   time = parseInt(time);
@@ -19,14 +19,24 @@ function Timer() {
   const inputRef = useRef(null);
   const timerDisplayRef = useRef(null);
 
-  const alarmSound = new Audio("./src/assets/beep.mp3");
-
   useEffect(() => {
     inputSecondsRef.current.value = inputSecondsRef.current.value.padStart(2, "0");
     inputMinutesRef.current.value = inputMinutesRef.current.value.padStart(1, "0");
   }, [inputMinutesRef, inputSecondsRef]);
 
   useEffect(() => {
+    
+    const alarmSound = new Audio("./src/assets/beep.mp3");
+    
+    function alarm() {
+      setIsRunning(false);
+      clearInterval(intervalRef.current);
+      setTimer(0);
+      inputMinutesRef.current.value = "0";
+      inputSecondsRef.current.value = "00";
+      alarmSound.play();
+    }
+    
     if (isRunning) {
       timerDisplayRef.current.style.display = "block";
       inputRef.current.style.display = "none";
@@ -66,15 +76,6 @@ function Timer() {
     setTimer(0);
     inputMinutesRef.current.value = "0";
     inputSecondsRef.current.value = "00";
-  }
-
-  function alarm() {
-    setIsRunning(false);
-    clearInterval(intervalRef.current);
-    setTimer(0);
-    inputMinutesRef.current.value = "0";
-    inputSecondsRef.current.value = "00";
-    alarmSound.play();
   }
 
   return (
