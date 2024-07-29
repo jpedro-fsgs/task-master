@@ -1,6 +1,7 @@
 import { BsPause, BsPlay, BsStop } from "react-icons/bs";
 import "./Timer.scss";
 import { useEffect, useRef, useState } from "react";
+import Beep from "../assets/beep.mp3";
 
 function formatMinutes(time) {
   time = parseInt(time);
@@ -26,7 +27,7 @@ function Timer() {
 
   useEffect(() => {
     
-    const alarmSound = new Audio("./src/assets/beep.mp3");
+    const alarmSound = new Audio(Beep);
     
     function alarm() {
       setIsRunning(false);
